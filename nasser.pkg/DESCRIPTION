@@ -1,0 +1,21 @@
+Package: nasser.pkg
+Title: An R package for analyzing field data
+Version: 1.0.0
+Authors@R: c(
+     person(given="Jasmine",
+            family="Nasser",
+            role=c("cre","aut"),
+            email="jasmine.nasser@selu.edu"))
+Description: In this package, the data collected in the field can be analyzed and easily manipulated using simple functions and calculations. This package is also able to analyze non-numeric data using statistical analyses geared toward difficult data. This package can also promote map making for field sites. 
+License: MIT + file LICENSE
+Depends:
+  R(>= 2.10)
+Imports:
+  tidyverse,broom
+RoxygenNote: 7.1.1
+Suggests:
+  knitr, 
+  rmarkdown
+VignetteBuilder: knitr
+Encoding: UTF-8
+Roxygen: list(markdown=TRUE)
