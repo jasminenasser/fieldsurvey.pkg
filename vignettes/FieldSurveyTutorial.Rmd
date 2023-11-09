@@ -8,5 +8,22 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-
 #This package analyzes and manipulates field survey data like traps, tag numbers, locations, etc.
+
+```{R}
+devtools::install_github("jasminenasser/fieldsurvey.pkg")
+install.packages("vegan")
+install.packages("tidyverse")
+install.packages("ggplot2")
+```
+
+In this tutorial, I will use previous field data from 2005-2013 from North Dakota.0
+
+```{R}
+install.packages("googlesheets4")
+googlesheets4::gs4_auth()
+field <- read_sheet("https://docs.google.com/spreadsheets/d/1hH39exibZwdQyr3IsLzxBMXpfCz0qVN-4mAe673PPpQ/edit?usp=sharing")
+
+```
+
+
