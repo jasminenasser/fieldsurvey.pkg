@@ -18,7 +18,3 @@ select(-c({{column_list}}))
 return(clean)
 }
 }
-
-#This function will scrap or get rid of unnecessary columns that does not serve a major role
-#in the potential functions I would like to create. Like narrowing the scope of my data so
-#I can focus on the information that can potentially mean something later. 
