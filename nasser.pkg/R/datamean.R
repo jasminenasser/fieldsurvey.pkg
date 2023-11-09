@@ -21,4 +21,4 @@ return(mean)
 }
 }
 
-#This function will create columns for the average of columns. Basically multiple columns getting averaged in one function.
+

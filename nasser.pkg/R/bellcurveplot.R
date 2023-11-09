@@ -1,7 +1,6 @@
 #' Creates a bell curve plot that illustrates distribution of a species.
 #' 
-#' Utilizes the 
-
+#' 
 
 
 

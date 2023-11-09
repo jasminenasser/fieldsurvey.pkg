@@ -17,6 +17,3 @@ stat <- summary(model_fit)
 return(stat)
 }
 
-
-#This function creates a linear model with two predictor variables and one response 
-#variable. Still trying to figure out a way to gear this towards the Lepidosaurs/Amphibia.
