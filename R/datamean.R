@@ -11,14 +11,14 @@
 #' @export
 
 data_mean <- function(data_name,column){
-if (!is.numeric(data_name[[column]])){
-print("Column data must be numeric.")
-} else {
-mean <- {{data_name}} %>%
-na.omit() %>%
-mutate(mean_column=mean(data_name[[column]]))
-return(mean)
-}
+  mean <- data_name %>%
+  na.omit() %>%
+  mutate(mean_column=mean({{column}}))  
+  if (!is.numeric(mean$mean_column)){
+    print("Column data must be numeric.")
+  } else {
+  return(mean)
+  }
 }
 
 
