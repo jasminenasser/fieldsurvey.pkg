@@ -19,6 +19,24 @@
     <loc>/index.html</loc>
   </url>
   <url>
+    <loc>/reference/custom_plot.html</loc>
+  </url>
+  <url>
+    <loc>/reference/data_mean.html</loc>
+  </url>
+  <url>
+    <loc>/reference/density_plot.html</loc>
+  </url>
+  <url>
     <loc>/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>/reference/lm_model.html</loc>
+  </url>
+  <url>
+    <loc>/reference/manova_maker.html</loc>
+  </url>
+  <url>
+    <loc>/reference/scrap_col.html</loc>
   </url>
 </urlset>
