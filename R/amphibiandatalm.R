@@ -11,7 +11,7 @@
 
 #' @export 
 
-amphib_lm <- function(data_name,column_one,column_two,column_three){
+lm_model <- function(data_name,column_one,column_two,column_three){
   data_name %>% 
   if(!is.numeric({{eval(as.name(column_one))}})){
  model_fit <- lm(eval(as.name(column_one)) ~ eval(as.name(column_two)) + eval(as.name(column_three)), data = data_name) %>% 

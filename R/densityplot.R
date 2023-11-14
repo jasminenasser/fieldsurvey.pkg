@@ -11,7 +11,7 @@
 #' 
 #' @export
 
-densityplot <- function(data_name, column_one, column_two, column_three) {
+density_plot <- function(data_name, column_one, column_two, column_three) {
   plot <- ggplot(data = data_name, aes(x = {{ column_one }}, y = {{ column_two }}, color = {{ column_three }})) +
     geom_density (stat = "density", position = "jitter", adjust = 1/16) 
   if (!all(c( data_name %in% {{column_one}}, data_name %in% {{ column_two }}, data_name %in% {{ column_three }}))) {
