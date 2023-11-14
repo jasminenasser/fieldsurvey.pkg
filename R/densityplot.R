@@ -12,14 +12,11 @@
 #' @export
 
 densityplot <- function(data_name, column_one, column_two, column_three) {
-  if (!all(c(column_one, column_two, column_three) %in% names(data_name))) {
-    print("Columns need to be in the dataset.")
-    return(NULL)
-  }
-  
   plot <- ggplot(data = data_name, aes(x = {{column_one}}, y = {{column_two}}, color = {{column_three}})) +
-    geom_density(stat = "density", position = "jitter", adjust = 1/16)
-  
+    geom_density(stat = "density", position = "jitter", adjust = 1/16) 
+  if (!all(c({{column_one}}, {{column_two}}, {{column_three}}) %in% names(data_name))) {
+    print("Columns need to be in the dataset.")
+  } else{
   return(plot)
 }
-
+}
