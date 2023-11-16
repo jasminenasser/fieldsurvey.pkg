@@ -86,9 +86,20 @@ Nasser</h4>
 <code class="sourceCode R"><span><span class="co">#install packages for better access to the functions</span></span>
 <span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"jasminenasser/fieldsurvey.pkg"</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## Using github PAT from envvar GITHUB_PAT</span></span></code></pre>
-<pre><code><span><span class="co">## Skipping install of 'nasser.pkg' from a github remote, the SHA1 (5a8740cc) has not changed since last install.</span></span>
-<span><span class="co">##   Use `force = TRUE` to force installation</span></span></code></pre>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<pre><code><span><span class="co">## Downloading GitHub repo jasminenasser/fieldsurvey.pkg@HEAD</span></span></code></pre>
+<pre><code><span><span class="co">## </span></span>
+<span><span class="co">## <span style="color: #00BBBB;">──</span> <span style="color: #00BBBB;">R CMD build</span> <span style="color: #00BBBB;">─────────────────────────────────────────────────────────────────</span></span></span>
+<span><span class="co">## * checking for file ‘/tmp/RtmphZuBYP/remotes1abe5eea34db/jasminenasser-fieldsurvey.pkg-4faef80/DESCRIPTION’ ... OK</span></span>
+<span><span class="co">## * preparing ‘nasser.pkg’:</span></span>
+<span><span class="co">## * checking DESCRIPTION meta-information ... OK</span></span>
+<span><span class="co">## * checking for LF line-endings in source and make files and shell scripts</span></span>
+<span><span class="co">## * checking for empty or unneeded directories</span></span>
+<span><span class="co">## * looking to see if a ‘data/datalist’ file should be added</span></span>
+<span><span class="co">## * building ‘nasser.pkg_1.0.0.tar.gz’</span></span>
+<span><span class="co">## Warning: invalid uid value replaced by that for user 'nobody'</span></span></code></pre>
+<pre><code><span><span class="co">## Installing package into '/tmp/Rtmp4aQALs/temp_libpathb04496e3d2d'</span></span>
+<span><span class="co">## (as 'lib' is unspecified)</span></span></code></pre>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#install.packages("tidyverse")</span></span>
 <span><span class="co">#install.packages("ggplot2")</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org" class="external-link">tidyverse</a></span><span class="op">)</span></span></code></pre></div>
@@ -102,11 +113,11 @@ Nasser</h4>
 <span><span class="co">## <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">filter()</span> masks <span style="color: #0000BB;">stats</span>::filter()</span></span>
 <span><span class="co">## <span style="color: #BB0000;">✖</span> <span style="color: #0000BB;">dplyr</span>::<span style="color: #00BB00;">lag()</span>    masks <span style="color: #0000BB;">stats</span>::lag()</span></span>
 <span><span class="co">## <span style="color: #00BBBB;">ℹ</span> Use the conflicted package (<span style="color: #0000BB; font-style: italic;">&lt;http://conflicted.r-lib.org/&gt;</span>) to force all conflicts to become errors</span></span></code></pre>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span></code></pre></div>
 <p>In this tutorial, I will use previous field data from 2005-2013 from
 North Dakota.</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#install.packages("googlesheets4")</span></span>
 <span><span class="co">#install.packages("googlesheets4")</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://googlesheets4.tidyverse.org" class="external-link">googlesheets4</a></span><span class="op">)</span></span>
@@ -232,13 +243,15 @@ North Dakota.</p>
 <span></span>
 <span><span class="co">## Warning in .Primitive("as.double")(x, ...): NAs introduced by coercion</span></span></code></pre>
 <p>How to use these functions within this package.</p>
-<p>##Cleaning and Organizing the data</p>
+<div class="section level2">
+<h2 id="cleaning-and-organizing-the-data">Cleaning and Organizing the data<a class="anchor" aria-label="anchor" href="#cleaning-and-organizing-the-data"></a>
+</h2>
 <p>The first function in this package is a function that cleans or
 organizes the data set.This function is called scrap_col() it requires a
 data set and a column list you wish to get exclude from your data. Don’t
 for to concatenate the columns and use quotations!</p>
 <p>Type in this code into your R console.</p>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">nasser.pkg</span><span class="op">)</span></span>
 <span><span class="fu"><a href="../reference/scrap_col.html">scrap_col</a></span><span class="op">(</span><span class="va">AGP_data</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"recap"</span>,<span class="st">"notes"</span>,<span class="st">"username"</span>,<span class="st">"recent"</span>,<span class="st">"tagnum"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## <span style="color: #949494;"># A tibble: 6,086 × 11</span></span></span>
@@ -259,13 +272,16 @@ for to concatenate the columns and use quotations!</p>
 <p>If the code runs properly then R should return a data set without the
 specified columns.Limiting the data frame to manageable amounts of
 columns and rows.</p>
-<p>##Manipulating the data by using averages</p>
+</div>
+<div class="section level2">
+<h2 id="manipulating-the-data-by-using-averages">Manipulating the data by using averages<a class="anchor" aria-label="anchor" href="#manipulating-the-data-by-using-averages"></a>
+</h2>
 <p>The next function is going to manipulate the data set by creating a
 new column and populating it with averages. The function data_mean()
 uses your own input for a numeric column and takes the mean of the
 specified column.</p>
 <p>Type in this code into your R console.</p>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/data_mean.html">data_mean</a></span><span class="op">(</span><span class="va">AGP_data</span>,<span class="va">mass</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## <span style="color: #949494;"># A tibble: 0 × 17</span></span></span>
 <span><span class="co">## <span style="color: #949494;"># ℹ 17 variables: id &lt;dbl&gt;, date &lt;dttm&gt;, location &lt;chr&gt;, traptype &lt;chr&gt;,</span></span></span>
@@ -280,7 +296,7 @@ averages of the numbers in the column specified.</p>
 we can look at the significance and the relationships between the
 data.</p>
 <p>Type in this code into your R console.</p>
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/lm_model.html">lm_model</a></span><span class="op">(</span><span class="va">AGP_data</span>,<span class="st">"svl"</span>,<span class="st">"stage"</span>,<span class="st">"critter"</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## </span></span>
 <span><span class="co">## Call:</span></span>
@@ -324,7 +340,7 @@ Use the custom_plot() function and specify which plot type you wish to
 see for your data using the independent and dependent variable you
 chose.</p>
 <p>Type in this code into your R console.</p>
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/custom_plot.html">custom_plot</a></span><span class="op">(</span><span class="va">AGP_data</span>,<span class="va">stage</span>,<span class="va">svl</span>,<span class="va">critter</span>,<span class="st">"scatter"</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## Warning: Removed 546 rows containing missing values (`geom_point()`).</span></span></code></pre>
 <p><img src="FieldSurveyTutorial_files/figure-html/unnamed-chunk-6-1.png" width="700"></p>
@@ -338,7 +354,7 @@ manova_maker() and the data frame and three different columns meeting
 the criteria above runs a linear model summary similar to a normal
 linear model function.</p>
 <p>Type in this code into your R console.</p>
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/manova_maker.html">manova_maker</a></span><span class="op">(</span><span class="va">AGP_data</span>,<span class="st">"mass"</span>,<span class="st">"svl"</span>,<span class="st">"critter"</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">##             Df  Pillai approx F num Df den Df    Pr(&gt;F)    </span></span>
 <span><span class="co">## predictor   12 0.52534   141.73     24   9548 &lt; 2.2e-16 ***</span></span>
@@ -353,19 +369,22 @@ statistical analyses.</p>
 categorical columns of the data set. Use density_plot() for looking at
 the fluctuation of the numerical values.</p>
 <p>Type in this code into your R console.</p>
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/density_plot.html">density_plot</a></span><span class="op">(</span><span class="va">AGP_data</span>,<span class="st">"mass"</span>,<span class="st">"critter"</span>,<span class="st">"stage"</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## function (x, y, ...) </span></span>
 <span><span class="co">## UseMethod("plot")</span></span>
-<span><span class="co">## &lt;bytecode: 0x557262742ae0&gt;</span></span>
+<span><span class="co">## &lt;bytecode: 0x55ad968e4920&gt;</span></span>
 <span><span class="co">## &lt;environment: namespace:base&gt;</span></span></code></pre>
 <p>If the function works properly in R the density plot should appear
 using the specified columns meeting the aforementioned criteria.</p>
+</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
 
-      </div>
+        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
+    </nav>
+</div>
 
 </div>
 
