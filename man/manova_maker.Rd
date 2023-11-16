@@ -9,14 +9,14 @@ manova_maker(data_name, column_one, column_two, column_three)
 \arguments{
 \item{data_name}{name of the data set being used}
 
-\item{column_one}{the name of the column being used as the response variable}
+\item{column_one}{the name of the column being used as the response variable (must be a numeric variable)}
 
-\item{column_two}{the name of the column being used as the second response variable}
+\item{column_two}{the name of the column being used as the second response variable (must be a numeric variable)}
 
-\item{column_three}{the name of the column being used as the predictor variable}
+\item{column_three}{the name of the column being used as the predictor variable (must be a categorical variable)}
 }
 \value{
-a density plot for the columns specified
+a manova summary for the columns specified
 }
 \description{
 Utilizes the manova function to make a multivariate analysis.

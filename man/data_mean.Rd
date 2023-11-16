@@ -9,7 +9,7 @@ data_mean(data_name, column)
 \arguments{
 \item{data_name}{Name of the data set you are working within}
 
-\item{column_list}{Name of the column(s) you wish to calculate the mean for}
+\item{column}{Name of the column(s) you wish to calculate the mean for}
 
 \item{new_column}{Name of a new column to place calculations in}
 }

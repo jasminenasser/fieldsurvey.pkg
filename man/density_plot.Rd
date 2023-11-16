@@ -4,16 +4,23 @@
 \alias{density_plot}
 \title{Creates a density plot for field surveys.}
 \usage{
-density_plot(data_name, column_one, column_two, column_three)
+density_plot(
+  data,
+  column_one,
+  column_two,
+  column_three,
+  position = "jitter",
+  adjust = 1/16
+)
 }
 \arguments{
-\item{data_name}{name of the data set being used}
-
-\item{column_one}{name of the column used for the x-axis}
+\item{column_one}{name of the column used for the x-axis (must be a numeric value)}
 
 \item{column_two}{name of the column used for the y-axis}
 
 \item{column_three}{name of the column used to color the data by}
+
+\item{data_name}{name of the data set being used}
 }
 \value{
 a density plot
