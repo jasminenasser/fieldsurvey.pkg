@@ -4,7 +4,7 @@
 #' Returns a plot with the variables inputted.
 #' 
 #' @param data_name name of the data set being used
-#' @param column_one name of the column used for the x-axis 
+#' @param column_one name of the column used for the x-axis (must be a numeric value) 
 #' @param column_two name of the column used for the y-axis
 #' @param column_three name of the column used to color the data by
 #' @return a density plot
