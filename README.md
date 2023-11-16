@@ -33,46 +33,43 @@ field <- read_sheet("https://docs.google.com/spreadsheets/d/1hH39exibZwdQyr3IsLz
 ```
 If you wish to export your own data frame from your computer into your R studio then open the File tab of whatever software holds the data frame and under the Export tab there is another category that says change the file type. Click change file type and select the CSV file type. CSV files are easily read by and exported in R. 
 
-# The Functions of this package and how to use them
+# The Functions of this package and how to use them:
 The functions in this package utilize of packages as well, I recommend installing the other packages as well to ensure optimum progress in the analyses. 
 
-# Cleaning/ Reorganizing the data
-
+## Cleaning/ Reorganizing the data
 The scrap_col() function will get rid of certain columns that do not seem to hold value for further analyses.
 To better understand this function search the tutorial for scrap_col() or enter the code below to get a look at what this function does to data.
 ```{R}
 scrap_col(AGP_data,c("recap","notes","username","recent","tagnum"))
 
 ```
-# Manipulation of the data
-
+## Manipulation of the data
 The data_mean() function will generate a new column that hold averages of a column that has numeric values. To better understand this function search the tutorial for data_mean() or copy the code below and take a look at the results.
 ```{R}
 data_mean(AGP_data,mass)
 
 ```
-# Linear Model summary 
-
+## Linear Model summary 
 The lm_model() function will create a summary of the linear relationships and if there is a significance in those interactions.To better understand this function search the tutorial for lm_model() or copy the code below and take a look at the results
 ```{R}
 lm_model(AGP_data,"svl","stage","critter")
 
 ```
-# Visulaizing data through plots
+## Visulaizing data through plots
 
 The custom_plot function creates a plot of your choosing and will also facet the information to appeal more visually. To better understand this function search the tutorial for custom_plot() or copy the code below to better look at the plot. 
 ```{R}
 custom_plot(AGP_data,stage,svl,critter,"scatter")
 
 ```
-# MANOVA anysis 
+## MANOVA anysis 
 
 The manova_maker() function generates a summary of the manova analysis and uses significance for determining the value of the association of the variables. For more information on the MANOVA function the tutorial can be found in the articles tab or copy the code to analyze the results.
 ```{R}
 manova_maker(AGP_data,"mass","svl","critter")
 
 ```
-# Density plot maker 
+## Density plot maker 
 
 The density_plot() function will create a density plot for the fluctuations of numeric data. To better understand this function take a look at the tutorial found in the articles tab or copy the code below and take a look at the results. 
 ```{R}
