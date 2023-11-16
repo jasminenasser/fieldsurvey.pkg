@@ -9,72 +9,71 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-This package analyzes and manipulates field survey data. 
+This package analyzes and manipulates field survey data.
 
 ```{R}
 #install packages for better access to the functions
 devtools::install_github("jasminenasser/fieldsurvey.pkg")
-install.packages("tidyverse")
-install.packages("ggplot2")
+#install.packages("tidyverse")
+#install.packages("ggplot2")
+library(tidyverse)
+library(ggplot2)
 ```
 
 In this tutorial, I will use previous field data from 2005-2013 from North Dakota.
 
-```{R, eval=FALSE}
+```{r}
 #install.packages("googlesheets4")
-install.packages("googlesheets4")
-googlesheets4::gs4_auth()
-field <- read_sheet("https://docs.google.com/spreadsheets/d/1hH39exibZwdQyr3IsLzxBMXpfCz0qVN-4mAe673PPpQ/edit?usp=sharing")
+#install.packages("googlesheets4")
+library(googlesheets4)
+googlesheets4::gs4_deauth()
+AGP_data <- read_sheet("https://docs.google.com/spreadsheets/d/1hH39exibZwdQyr3IsLzxBMXpfCz0qVN-4mAe673PPpQ/edit?usp=sharing")
 
 ```
 
 How to use these functions within this package.
 
-##Cleaning and Organizing the data
+# Cleaning and Organizing the data
 
 The first function in this package is a function that cleans or organizes the data set.This function is called scrap_col() it requires a data set and a column list you wish to get exclude from your data. Don't for to concatenate the columns and use quotations!
 
 Type in this code into your R console.
-
-```{R}
+```{r}
 library(nasser.pkg)
-scrap_col(AGP_data,c("recap","notes","username","recent","tagnum"))
+scrap_col(AGP_data, c("recap","notes","username","recent","tagnum"))
 ```
 
-If the code runs properly then R should return a data set without the specified columns.Limiting the data frame to manageable amounts of columns and rows. 
+If the code runs properly then R should return a data set without the specified columns.Limiting the data frame to manageable amounts of columns and rows.
 
-##Manipulating the data by using averages
+# Manipulating the data by using averages
 
 The next function is going to manipulate the data set by creating a new column and populating it with averages. The function data_mean() uses your own input for a numeric column and takes the mean of the specified column.
 
 Type in this code into your R console.
-
-```{R}
+```{r}
 data_mean(AGP_data,mass)
 ```
 
-If the function works properly, you will see a new column toward the end of the data frame called "mean_column" and it will be populated with averages of the numbers in the column specified. 
+If the function works properly, you will see a new column toward the end of the data frame called "mean_column" and it will be populated with averages of the numbers in the column specified.
 
-#Analyzing linear relationships 
+#Analyzing linear relationships
 
-The next function is for linear models. Using the lm_model() function we can look at the significance and the relationships between the data. 
+The next function is for linear models. Using the lm_model() function we can look at the significance and the relationships between the data.
 
 Type in this code into your R console.
-
-```{R}
+```{r}
 lm_model(AGP_data,"svl","stage","critter")
 
 ```
 
-If the code works properly then you should see a summary table indicating significant relationships between the response and predictor variables of the data set. 
+If the code works properly then you should see a summary table indicating significant relationships between the response and predictor variables of the data set.
 
 #Visualizing the Data using plots
 
 The next function will help visualize data using a variety of plot. Use the custom_plot() function and specify which plot type you wish to see for your data using the independent and dependent variable you chose.
 
 Type in this code into your R console.
-
-```{R}
+```{r}
 custom_plot(AGP_data,stage,svl,critter,"scatter")
 
 ```
@@ -83,24 +82,22 @@ If the function properly works the specified plot type should show and the colum
 
 ##MANOVA analysis
 
-The next function is a MANOVA analysis which uses two numeric response variable and a single categorical predictor. Using the manova_maker() and the data frame and three different columns meeting the criteria above runs a linear model summary similar to a normal linear model function. 
+The next function is a MANOVA analysis which uses two numeric response variable and a single categorical predictor. Using the manova_maker() and the data frame and three different columns meeting the criteria above runs a linear model summary similar to a normal linear model function.
 
 Type in this code into your R console.
-
-```{R}
+```{r}
 manova_maker(AGP_data,"mass","svl","critter")
 
 ```
 
-If the MANOVA function works the result shows the significance of the relationship and uses the Pillai value to show the R^2 value used in statistical analyses. 
+If the MANOVA function works the result shows the significance of the relationship and uses the Pillai value to show the R\^2 value used in statistical analyses.
 
-##Density Plot 
+##Density Plot
 
-This function creates a density plot using a numeric column and two categorical columns of the data set. Use density_plot() for looking at the fluctuation of the numerical values. 
+This function creates a density plot using a numeric column and two categorical columns of the data set. Use density_plot() for looking at the fluctuation of the numerical values.
 
 Type in this code into your R console.
-
-```{R}
+```{r}
 density_plot(AGP_data,"mass","critter","stage")
 
 ```
