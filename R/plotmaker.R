@@ -13,19 +13,16 @@
 
 custom_plot <- function(data, column_one, column_two, column_three, plot_type) {
 if (plot_type == "scatter") {
-# Scatter plot
 plot <- ggplot(data, aes(x = {{column_one}}, y = {{column_two}})) +
 geom_point(stat = "identity") +
 facet_wrap(facets = vars({{column_three}})) +
 theme_bw()
 } else if (plot_type == "boxplot") {
-# Boxplot
 plot <- ggplot(data, aes(x = {{column_one}}, y = {{column_two}})) +
 geom_boxplot() +
 facet_wrap(facets = vars({{column_three}})) +
 theme_bw()
 } else {
-# Default scatter plot if no valid plot type is specified
 plot <- ggplot(data, aes(x = {{column_one}}, y = {{column_two}})) +
 geom_point(stat = "identity") +
 facet_wrap(facets = vars({{column_three}})) +

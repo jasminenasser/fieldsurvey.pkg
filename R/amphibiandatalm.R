@@ -11,14 +11,12 @@
 
 #' @export 
 
-lm_model <- function(data_name,column_one,column_two,column_three){
-  data_name %>% 
-  if(!is.numeric({{eval(as.name(column_one))}})){
- model_fit <- lm(eval(as.name(column_one)) ~ eval(as.name(column_two)) + eval(as.name(column_three)), data = data_name) %>% 
-stat <- summary(model_fit)
-return(stat)   
-  } else{
+lm_model <- function(data_name, column_one, column_two, column_three) {
+  if (!is.numeric(data_name[[column_one]])) {
     print("Response variable is not numeric.")
+    return(NULL)  
   }
+  formula_str <- paste(column_one, "~", column_two, "+", column_three)
+  model_fit <- lm(formula_str, data = data_name)
+  return(summary(model_fit))
 }
-
