@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 This package analyzes and manipulates field survey data.
 
-```{R}
+```{r}
 #install packages for better access to the functions
 devtools::install_github("jasminenasser/fieldsurvey.pkg")
 #install.packages("tidyverse")
