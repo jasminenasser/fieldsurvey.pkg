@@ -4,7 +4,7 @@
 #' Returns data set with new column filled with the calculated mean of a column. 
 #' 
 #' @param data_name Name of the data set you are working within
-#' @param column_list Name of the column(s) you wish to calculate the mean for
+#' @param column Name of the column(s) you wish to calculate the mean for
 #' @param new_column Name of a new column to place calculations in
 #' @return calculations of mean for the specified column (numeric)
 #' 
