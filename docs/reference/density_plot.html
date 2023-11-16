@@ -56,17 +56,20 @@ Returns a plot with the variables inputted.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">density_plot</span><span class="op">(</span><span class="va">data_name</span>, <span class="va">column_one</span>, <span class="va">column_two</span>, <span class="va">column_three</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">density_plot</span><span class="op">(</span></span>
+<span>  <span class="va">data</span>,</span>
+<span>  <span class="va">column_one</span>,</span>
+<span>  <span class="va">column_two</span>,</span>
+<span>  <span class="va">column_three</span>,</span>
+<span>  position <span class="op">=</span> <span class="st">"jitter"</span>,</span>
+<span>  adjust <span class="op">=</span> <span class="fl">1</span><span class="op">/</span><span class="fl">16</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>data_name</dt>
-<dd><p>name of the data set being used</p></dd>
-
-
-<dt>column_one</dt>
-<dd><p>name of the column used for the x-axis</p></dd>
+    <dl><dt>column_one</dt>
+<dd><p>name of the column used for the x-axis (must be a numeric value)</p></dd>
 
 
 <dt>column_two</dt>
@@ -75,6 +78,10 @@ Returns a plot with the variables inputted.</p>
 
 <dt>column_three</dt>
 <dd><p>name of the column used to color the data by</p></dd>
+
+
+<dt>data_name</dt>
+<dd><p>name of the data set being used</p></dd>
 
 </dl></div>
     <div id="value">

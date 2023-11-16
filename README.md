@@ -3,9 +3,11 @@
 ## An R package for analyzing field data
 
 # Overview:
+
 In this package, the data collected in the field can be analyzed and easily manipulated using simple functions and calculations. This package is also able to analyze non-numeric data using statistical analyses geared toward difficult data. This package can also promote map making for field sites.
 
 # Functions:
+
 scrap_col()   gets rid of unnecessary columns not needed for analysis
 data_mean()   creates a new mean column for averages for a specified numeric column
 density_plot()creates a density plot for the specified variables
@@ -17,6 +19,7 @@ For a more detailed review of the functions in this package look at vignettes(na
 
 # Installations:
 #It is recommended for these packages to be installed so functions run smoothly.
+
 install.packages("nasser.pkg")
 install.packages("tidyverse")
 install.packages("ggplot2")
@@ -39,18 +42,21 @@ The functions in this package utilize of packages as well, I recommend installin
 ## Cleaning/ Reorganizing the data
 The scrap_col() function will get rid of certain columns that do not seem to hold value for further analyses.
 To better understand this function search the tutorial for scrap_col() or enter the code below to get a look at what this function does to data.
+
 ```{R}
 scrap_col(AGP_data,c("recap","notes","username","recent","tagnum"))
 
 ```
 ## Manipulation of the data
 The data_mean() function will generate a new column that hold averages of a column that has numeric values. To better understand this function search the tutorial for data_mean() or copy the code below and take a look at the results.
+
 ```{R}
 data_mean(AGP_data,mass)
 
 ```
 ## Linear Model summary 
-The lm_model() function will create a summary of the linear relationships and if there is a significance in those interactions.To better understand this function search the tutorial for lm_model() or copy the code below and take a look at the results
+The lm_model() function will create a summary of the linear relationships and if there is a significance in those interactions.To better understand this function search the tutorial for lm_model() or copy the code below and take a look at the results.
+
 ```{R}
 lm_model(AGP_data,"svl","stage","critter")
 
@@ -58,6 +64,7 @@ lm_model(AGP_data,"svl","stage","critter")
 ## Visulaizing data through plots
 
 The custom_plot function creates a plot of your choosing and will also facet the information to appeal more visually. To better understand this function search the tutorial for custom_plot() or copy the code below to better look at the plot. 
+
 ```{R}
 custom_plot(AGP_data,stage,svl,critter,"scatter")
 
@@ -65,6 +72,7 @@ custom_plot(AGP_data,stage,svl,critter,"scatter")
 ## MANOVA anysis 
 
 The manova_maker() function generates a summary of the manova analysis and uses significance for determining the value of the association of the variables. For more information on the MANOVA function the tutorial can be found in the articles tab or copy the code to analyze the results.
+
 ```{R}
 manova_maker(AGP_data,"mass","svl","critter")
 
@@ -72,6 +80,7 @@ manova_maker(AGP_data,"mass","svl","critter")
 ## Density plot maker 
 
 The density_plot() function will create a density plot for the fluctuations of numeric data. To better understand this function take a look at the tutorial found in the articles tab or copy the code below and take a look at the results. 
+
 ```{R}
 density_plot(AGP_data,"mass","critter","stage")
 
