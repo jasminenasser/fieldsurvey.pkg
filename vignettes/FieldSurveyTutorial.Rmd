@@ -12,20 +12,20 @@ knitr::opts_chunk$set(echo = TRUE)
 This package analyzes and manipulates field survey data.
 
 ```{r}
-#install packages for better access to the functions
 devtools::install_github("jasminenasser/fieldsurvey.pkg")
 #install.packages("tidyverse")
 #install.packages("ggplot2")
 library(tidyverse)
 library(ggplot2)
+library(nasser.pkg)
 ```
 
 In this tutorial, I will use previous field data from 2005-2013 from North Dakota.
 
 ```{r}
 #install.packages("googlesheets4")
-#install.packages("googlesheets4")
 library(googlesheets4)
+
 googlesheets4::gs4_deauth()
 AGP_data <- read_sheet("https://docs.google.com/spreadsheets/d/1hH39exibZwdQyr3IsLzxBMXpfCz0qVN-4mAe673PPpQ/edit?usp=sharing")
 
@@ -52,6 +52,7 @@ The next function is going to manipulate the data set by creating a new column a
 
 Type in this code into your R console.
 ```{r}
+library(nasser.pkg)
 data_mean(AGP_data,mass)
 ```
 
@@ -62,6 +63,7 @@ The next function is for linear models. Using the lm_model() function we can loo
 
 Type in this code into your R console.
 ```{r}
+library(nasser.pkg)
 lm_model(AGP_data,"svl","stage","critter")
 
 ```
@@ -73,6 +75,7 @@ The next function will help visualize data using a variety of plot. Use the cust
 
 Type in this code into your R console.
 ```{r}
+library(nasser.pkg)
 custom_plot(AGP_data,stage,svl,critter,"scatter")
 
 ```
@@ -84,6 +87,7 @@ The next function is a MANOVA analysis which uses two numeric response variable 
 
 Type in this code into your R console.
 ```{r}
+library(nasser.pkg)
 manova_maker(AGP_data,"mass","svl","critter")
 
 ```
@@ -96,6 +100,7 @@ This function creates a density plot using a numeric column and two categorical 
 
 Type in this code into your R console.
 ```{r}
+library(nasser.pkg)
 density_plot(AGP_data,"mass","critter","stage")
 
 ```
