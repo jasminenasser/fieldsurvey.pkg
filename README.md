@@ -88,4 +88,4 @@ The density_plot() function will create a density plot for the fluctuations of n
 density_plot(AGP_data,"mass","critter","stage")
 ```
 
-For more information on this package take a look here https://github.com/jasminenasser/fieldsurvey.pkg.git
+For more information on this package take a look here https://github.com/jasminenasser/nasser.pkg.git
