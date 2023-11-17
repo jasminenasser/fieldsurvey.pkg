@@ -24,3 +24,4 @@ manova_maker <- function(data_name, column_one, column_two, column_three) {
   }
 return(manova_summary)
 }
+
