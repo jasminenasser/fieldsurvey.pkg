@@ -17,7 +17,19 @@ devtools::install_github("jasminenasser/fieldsurvey.pkg")
 #install.packages("ggplot2")
 library(tidyverse)
 library(ggplot2)
-library(nasser.pkg)
+```
+
+
+```{r}
+devtools::install_github("jasminenasser/fieldsurvey.pkg")
+#install.packages("tidyverse")
+#install.packages("ggplot2")
+library(tidyverse)
+library(ggplot2)
+```
+
+
+```{r}
 ```
 
 In this tutorial, I will use previous field data from 2005-2013 from North Dakota.
