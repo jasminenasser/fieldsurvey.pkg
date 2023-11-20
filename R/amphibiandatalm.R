@@ -15,8 +15,9 @@ lm_model <- function(data_name, column_one, column_two, column_three) {
   if (!is.numeric(data_name[[column_one]])) {
     print("Response variable is not numeric.")
     return(NULL)  
-  }
+  } else {
   formula_str <- paste(column_one, "~", column_two, "+", column_three)
   model_fit <- lm(formula_str, data = data_name)
   return(summary(model_fit))
+}
 }
