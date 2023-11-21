@@ -19,15 +19,6 @@ library(tidyverse)
 library(ggplot2)
 ```
 
-
-```{r}
-devtools::install_github("jasminenasser/nasser.pkg")
-#install.packages("tidyverse")
-#install.packages("ggplot2")
-library(tidyverse)
-library(ggplot2)
-```
-
 In this tutorial, I will use previous field data from 2005-2013 from North Dakota.
 
 ```{r}
@@ -43,12 +34,11 @@ How to use these functions within this package.
 
 # Cleaning and Organizing the data
 
-The first function in this package is a function that cleans or organizes the data set.This function is called scrap_col() it requires a data set and a column list you wish to get exclude from your data. Don't for to concatenate the columns and use quotations!
+The first function in this package is a function that cleans or organizes the data set.This function is called scrap_col() it requires a data set and a column list you wish to get exclude from your data. Don't forget to concatenate the columns and use quotations!
 
 Type in this code into your R console.
 ```{r}
 library(nasser.pkg)
-
 scrap_col(AGP_data, c("recap","notes","username","recent","tagnum"))
 ```
 
