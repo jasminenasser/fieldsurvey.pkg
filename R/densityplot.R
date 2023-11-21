@@ -12,10 +12,8 @@
 #' @export
 
 density_plot <- function(data, column_one, column_two, column_three, position = "jitter", adjust = 1/16) {
-  if (is.numeric(column_one)){ 
-    plot <- data %>%
-      na.omit() %>% 
-      ggplot(data= data, mapping= aes(x = {{column_one}}, y = {{column_two}}, color= {{column_three}})) +
+ if (!is.numeric(data[[column_one]])){
+     plot <- ggplot(data, mapping= aes(x = !!sym(column_one), y = !!sym(column_two), color= !!sym(column_three))) +
       geom_density(stat = "density", position = position, adjust = adjust)
    print("Column one needs to be numeric.")
   } else {
